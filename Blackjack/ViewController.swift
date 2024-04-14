@@ -18,9 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imgCard2: UIImageView!
     
     @IBAction func btnDeal(_ sender: Any) {
-        imgCard1.image = UIImage(named: randomCard(deck: myDeck))
-        imgCard2.image = UIImage(named: randomCard(deck: myDeck))
-        
+      
         createCard()
     }
     
@@ -28,6 +26,7 @@ class ViewController: UIViewController {
         
         let maxRange = deck.count - 1
         let randomNum = Int.random(in: 0...maxRange)
+        
         return deck[randomNum]
     }
     
@@ -48,41 +47,37 @@ class ViewController: UIViewController {
             }
         }
         return blankDeck
-        
     }
     
     func createCard(){
         let cardView = UIImageView()
         
         if turn == true && dealerCount < 5{
-
-            cardView.frame = CGRect(x: 50 + (dealerCount * 50), y: 100, width: 60, height: 90)
+            
+            cardView.frame = CGRect(x: 5 + (dealerCount * 50), y: 100, width: 83, height: 121)
             cardView.image = UIImage(named: myDeck.removeLast())
             
             dealerCount += 1
             turn = false
             
         } else if turn == false && playerCount < 5{
-            cardView.frame = CGRect(x: 50 + (playerCount * 50), y: 300, width: 60, height: 90)
+            cardView.frame = CGRect(x: 5 + (playerCount * 50), y: 300, width: 83, height: 121)
             cardView.image = UIImage(named: myDeck.removeLast())
-            dealerCount += 1
+            playerCount += 1
             turn = true
-        
+            
         } else {
-        print("No more cards being dealt")
-    }
+            print("No more cards being dealt")
+        }
         view.addSubview(cardView)
-}
-    
+    }
     
     var deck: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         myDeck = createDeck()
-            
+        myDeck.shuffle()
     }
 }
-
