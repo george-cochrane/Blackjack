@@ -38,8 +38,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="imgCar2" destination="OhR-IL-euL" id="yB5-gS-JpV"/>
-                        <outlet property="imgCard1" destination="jrY-bJ-Ato" id="zJx-tc-iZZ"/>
+                        <outlet property="imgCard1" destination="OhR-IL-euL" id="XwO-K1-aqb"/>
+                        <outlet property="imgCard2" destination="jrY-bJ-Ato" id="jDL-76-570"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

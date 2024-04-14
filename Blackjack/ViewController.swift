@@ -8,12 +8,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var myDeck: [String] = []
 
-    @IBOutlet weak var imgCar2: UIImageView!
     
     @IBOutlet weak var imgCard1: UIImageView!
     
+    @IBOutlet weak var imgCard2: UIImageView!
+    
     @IBAction func btnDeal(_ sender: Any) {
+        imgCard1.image = UIImage(named: randomCard(deck: myDeck))
+        imgCard2.image = UIImage(named: randomCard(deck: myDeck))
+    }
+
+    func randomCard(deck: [String]) -> String{
+        
+        let maxRange = deck.count - 1
+        let randomNum = Int.random(in: 0...maxRange)
+        return deck[randomNum]
     }
     
     func createDeck() -> [String]{
@@ -42,8 +54,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        deck = createDeck()
-              
-        
+        myDeck = createDeck()
+            
     }
 }
+
