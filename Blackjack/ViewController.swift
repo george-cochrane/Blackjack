@@ -7,9 +7,6 @@
 
 import UIKit
 
-// GC TEST
-// Another test 
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -19,5 +16,4 @@ class ViewController: UIViewController {
 
 
 }
-
 
