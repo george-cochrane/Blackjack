@@ -57,6 +57,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="lblDealerValue" destination="ext-Zb-khI" id="U3D-On-fAF"/>
+                        <outlet property="lblPlayerValue" destination="dlf-v2-Foo" id="mfz-Ob-2M7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

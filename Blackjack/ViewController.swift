@@ -19,6 +19,9 @@ class ViewController: UIViewController {
 //    @IBOutlet weak var imgCard1: UIImageView!
 //    @IBOutlet weak var imgCard2: UIImageView!
     
+    @IBOutlet weak var lblDealerValue: UILabel!
+    @IBOutlet weak var lblPlayerValue: UILabel!
+    
     @IBAction func btnDeal(_ sender: Any) {
       
         createCard()
@@ -64,10 +67,13 @@ class ViewController: UIViewController {
             dealersHand.append(Int(card.suffix(2))!)
             print(dealersHand)
             let total = dealersHand.reduce(0, +)
-            print(total)
+            lblDealerValue.text = String(total)
+            
+            print("Dealer Value =", total)
         
             dealerCount += 1
             turn = false
+            
         } else if turn == false && playerCount < 5{
             cardView.frame = CGRect(x: 5 + (playerCount * 50), y: 300, width: 83, height: 121)
                     
@@ -77,7 +83,8 @@ class ViewController: UIViewController {
             playersHand.append(Int(card.suffix(2))!)
             print(playersHand)
             let total = playersHand.reduce(0, +)
-            print(total)
+            lblPlayerValue.text = String(total)
+            print("Player Value =", total)
             
             playerCount += 1
             turn = true
