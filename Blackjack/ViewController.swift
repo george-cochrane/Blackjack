@@ -20,6 +20,7 @@ class ViewController: UIViewController {
 //    @IBOutlet weak var imgCard2: UIImageView!
     
     @IBOutlet weak var lblDealerValue: UILabel!
+    
     @IBOutlet weak var lblPlayerValue: UILabel!
     
     @IBAction func btnDeal(_ sender: Any) {
@@ -65,11 +66,12 @@ class ViewController: UIViewController {
             cardView.image = UIImage(named: card)
             
             dealersHand.append(Int(card.suffix(2))!)
-            print(dealersHand)
-            let total = dealersHand.reduce(0, +)
-            lblDealerValue.text = String(total)
+            print("Dealer's Cards =",dealersHand)
+            let dealerTotal = dealersHand.reduce(0, +)
+           
+            lblDealerValue.text = String(dealerTotal)
             
-            print("Dealer Value =", total)
+            print("Dealer Totalx =", dealerTotal)
         
             dealerCount += 1
             turn = false
@@ -81,10 +83,11 @@ class ViewController: UIViewController {
             cardView.image = UIImage(named: card)
                         
             playersHand.append(Int(card.suffix(2))!)
-            print(playersHand)
-            let total = playersHand.reduce(0, +)
-            lblPlayerValue.text = String(total)
-            print("Player Value =", total)
+            print("Player's Cards =", playersHand)
+            let playerTotal = playersHand.reduce(0, +)
+           
+            lblPlayerValue.text = String(playerTotal)
+            print("Player Total =", playerTotal)
             
             playerCount += 1
             turn = true
@@ -100,6 +103,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         myDeck = createDeck()
         myDeck.shuffle()
     }
