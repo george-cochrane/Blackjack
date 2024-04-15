@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     func createCard(){
         let cardView = UIImageView()
         
-        if turn == true && dealerCount < 5{
+        if turn == true && dealerCount < 5{ //number of cards!
             
             cardView.frame = CGRect(x: 5 + (dealerCount * 50), y: 100, width: 83, height: 121)
             
@@ -76,7 +76,8 @@ class ViewController: UIViewController {
             dealerCount += 1
             turn = false
             
-        } else if turn == false && playerCount < 5{
+            
+        } else if turn == false && playerCount < 5{ //number of cards!
             cardView.frame = CGRect(x: 5 + (playerCount * 50), y: 300, width: 83, height: 121)
                     
             let card = myDeck.removeLast()
