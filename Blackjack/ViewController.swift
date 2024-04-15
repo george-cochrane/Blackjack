@@ -1,11 +1,10 @@
 //
 //  ViewController.swift
 //  Blackjack
-//
 //  Created by George Cochrane on 14/04/2024.
-//
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
     
@@ -15,6 +14,7 @@ class ViewController: UIViewController {
     var playersHand: [Int] = []
     var dealersHand: [Int] = []
     var turn = true
+    var deck: [String] = []
     
 //    @IBOutlet weak var imgCard1: UIImageView!
 //    @IBOutlet weak var imgCard2: UIImageView!
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
       
         createCard()
     }
-    
+
     func randomCard(deck: [String]) -> String{
         
         let maxRange = deck.count - 1
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         
         return deck[randomNum]
     }
-    
+
     func createDeck() -> [String]{
         let suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
         
@@ -76,7 +76,6 @@ class ViewController: UIViewController {
             dealerCount += 1
             turn = false
             
-            
         } else if turn == false && playerCount < 5{ //number of cards!
             cardView.frame = CGRect(x: 5 + (playerCount * 50), y: 300, width: 83, height: 121)
                     
@@ -98,13 +97,19 @@ class ViewController: UIViewController {
         }
         view.addSubview(cardView)
     }
-    
-    var deck: [String] = []
-    
+    func checkWinner(handValue: Int, player: String) -> String{
+        switch handValue{
+        case 21:
+            return "/(player) Wins!"
+        case 20:
+            return "Are you sure you want to Hit?"
+        default:
+            return "Hit or Stay?"
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         myDeck = createDeck()
         myDeck.shuffle()
     }
