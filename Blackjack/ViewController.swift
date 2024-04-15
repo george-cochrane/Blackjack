@@ -12,10 +12,12 @@ class ViewController: UIViewController {
     var myDeck: [String] = []
     var dealerCount = 0
     var playerCount = 0
+    var playersHand: [Int] = []
+    var dealersHand: [Int] = []
     var turn = true
     
-    @IBOutlet weak var imgCard1: UIImageView!
-    @IBOutlet weak var imgCard2: UIImageView!
+//    @IBOutlet weak var imgCard1: UIImageView!
+//    @IBOutlet weak var imgCard2: UIImageView!
     
     @IBAction func btnDeal(_ sender: Any) {
       
@@ -55,14 +57,28 @@ class ViewController: UIViewController {
         if turn == true && dealerCount < 5{
             
             cardView.frame = CGRect(x: 5 + (dealerCount * 50), y: 100, width: 83, height: 121)
-            cardView.image = UIImage(named: myDeck.removeLast())
             
+            let card = myDeck.removeLast()
+            cardView.image = UIImage(named: card)
+            
+            dealersHand.append(Int(card.suffix(2))!)
+            print(dealersHand)
+            let total = dealersHand.reduce(0, +)
+            print(total)
+        
             dealerCount += 1
             turn = false
-            
         } else if turn == false && playerCount < 5{
             cardView.frame = CGRect(x: 5 + (playerCount * 50), y: 300, width: 83, height: 121)
-            cardView.image = UIImage(named: myDeck.removeLast())
+                    
+            let card = myDeck.removeLast()
+            cardView.image = UIImage(named: card)
+                        
+            playersHand.append(Int(card.suffix(2))!)
+            print(playersHand)
+            let total = playersHand.reduce(0, +)
+            print(total)
+            
             playerCount += 1
             turn = true
             
