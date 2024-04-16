@@ -19,15 +19,13 @@ class ViewController: UIViewController {
 //    @IBOutlet weak var imgCard1: UIImageView!
 //    @IBOutlet weak var imgCard2: UIImageView!
     
+    @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblDealerValue: UILabel!
-    
     @IBOutlet weak var lblPlayerValue: UILabel!
-    
     @IBAction func btnDeal(_ sender: Any) {
-      
         createCard()
     }
-
+    
     func randomCard(deck: [String]) -> String{
         
         let maxRange = deck.count - 1
@@ -68,7 +66,7 @@ class ViewController: UIViewController {
             dealersHand.append(Int(card.suffix(2))!)
             print("Dealer's Cards =",dealersHand)
             let dealerTotal = dealersHand.reduce(0, +)
-           
+            lblStatus.text  = checkWinner(handValue: dealerTotal, player: "Dealer")
             lblDealerValue.text = String(dealerTotal)
             
             print("Dealer Totalx =", dealerTotal)
@@ -85,10 +83,9 @@ class ViewController: UIViewController {
             playersHand.append(Int(card.suffix(2))!)
             print("Player's Cards =", playersHand)
             let playerTotal = playersHand.reduce(0, +)
-           
+            lblStatus.text = checkWinner(handValue: playerTotal, player: "Player")
             lblPlayerValue.text = String(playerTotal)
             print("Player Total =", playerTotal)
-            
             playerCount += 1
             turn = true
             

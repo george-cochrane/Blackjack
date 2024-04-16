@@ -17,6 +17,7 @@
 		482DD6EA2BCC1213005B614F /* BlackjackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482DD6E92BCC1213005B614F /* BlackjackTests.swift */; };
 		482DD6F42BCC1213005B614F /* BlackjackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482DD6F32BCC1213005B614F /* BlackjackUITests.swift */; };
 		482DD6F62BCC1213005B614F /* BlackjackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482DD6F52BCC1213005B614F /* BlackjackUITestsLaunchTests.swift */; };
+		48EDA72C2BCF1EEC00F5C18E /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EDA72B2BCF1EEC00F5C18E /* DataStructures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		482DD6EF2BCC1213005B614F /* BlackjackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlackjackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		482DD6F32BCC1213005B614F /* BlackjackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackjackUITests.swift; sourceTree = "<group>"; };
 		482DD6F52BCC1213005B614F /* BlackjackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackjackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48EDA72B2BCF1EEC00F5C18E /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				482DD6D12BCC1212005B614F /* SceneDelegate.swift */,
 				482DD6D32BCC1212005B614F /* ViewController.swift */,
 				482DD6D52BCC1212005B614F /* Main.storyboard */,
+				48EDA72B2BCF1EEC00F5C18E /* DataStructures.swift */,
 				482DD6DB2BCC1213005B614F /* Assets.xcassets */,
 				482DD6DD2BCC1213005B614F /* LaunchScreen.storyboard */,
 				482DD6E02BCC1213005B614F /* Info.plist */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				482DD6DA2BCC1212005B614F /* Blackjack.xcdatamodeld in Sources */,
+				48EDA72C2BCF1EEC00F5C18E /* DataStructures.swift in Sources */,
 				482DD6D42BCC1212005B614F /* ViewController.swift in Sources */,
 				482DD6D02BCC1212005B614F /* AppDelegate.swift in Sources */,
 				482DD6D22BCC1212005B614F /* SceneDelegate.swift in Sources */,
